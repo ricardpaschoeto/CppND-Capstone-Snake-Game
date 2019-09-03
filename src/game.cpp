@@ -47,7 +47,9 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
+
   }
+
 }
 
 void Game::PlaceFood() {

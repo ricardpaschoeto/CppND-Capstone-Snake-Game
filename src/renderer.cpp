@@ -32,9 +32,13 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
+  // Load Texture
+  //texture = SDL_
+
 }
 
 Renderer::~Renderer() {
+  SDL_DestroyTexture(texture);
   SDL_DestroyRenderer(sdl_renderer);
   SDL_DestroyWindow(sdl_window);
   SDL_Quit();
@@ -72,11 +76,11 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
     }else {
       SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
     }
-
     
     SDL_RenderFillRect(sdl_renderer, &block);
+
     SDL_UpdateWindowSurface( sdl_window );
-    SDL_RenderPresent(sdl_renderer);  
+    SDL_RenderPresent(sdl_renderer);
    
 }
 
