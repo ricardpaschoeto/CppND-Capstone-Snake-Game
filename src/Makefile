@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -204,32 +204,113 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-renderer.o: renderer.cpp.o
+rendererBase.o: rendererBase.cpp.o
 
-.PHONY : renderer.o
+.PHONY : rendererBase.o
 
 # target to build an object file
-renderer.cpp.o:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/renderer.cpp.o
-.PHONY : renderer.cpp.o
+rendererBase.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererBase.cpp.o
+.PHONY : rendererBase.cpp.o
 
-renderer.i: renderer.cpp.i
+rendererBase.i: rendererBase.cpp.i
 
-.PHONY : renderer.i
+.PHONY : rendererBase.i
 
 # target to preprocess a source file
-renderer.cpp.i:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/renderer.cpp.i
-.PHONY : renderer.cpp.i
+rendererBase.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererBase.cpp.i
+.PHONY : rendererBase.cpp.i
 
-renderer.s: renderer.cpp.s
+rendererBase.s: rendererBase.cpp.s
 
-.PHONY : renderer.s
+.PHONY : rendererBase.s
 
 # target to generate assembly for a file
-renderer.cpp.s:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/renderer.cpp.s
-.PHONY : renderer.cpp.s
+rendererBase.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererBase.cpp.s
+.PHONY : rendererBase.cpp.s
+
+rendererOne.o: rendererOne.cpp.o
+
+.PHONY : rendererOne.o
+
+# target to build an object file
+rendererOne.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererOne.cpp.o
+.PHONY : rendererOne.cpp.o
+
+rendererOne.i: rendererOne.cpp.i
+
+.PHONY : rendererOne.i
+
+# target to preprocess a source file
+rendererOne.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererOne.cpp.i
+.PHONY : rendererOne.cpp.i
+
+rendererOne.s: rendererOne.cpp.s
+
+.PHONY : rendererOne.s
+
+# target to generate assembly for a file
+rendererOne.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererOne.cpp.s
+.PHONY : rendererOne.cpp.s
+
+rendererTwo.o: rendererTwo.cpp.o
+
+.PHONY : rendererTwo.o
+
+# target to build an object file
+rendererTwo.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o
+.PHONY : rendererTwo.cpp.o
+
+rendererTwo.i: rendererTwo.cpp.i
+
+.PHONY : rendererTwo.i
+
+# target to preprocess a source file
+rendererTwo.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererTwo.cpp.i
+.PHONY : rendererTwo.cpp.i
+
+rendererTwo.s: rendererTwo.cpp.s
+
+.PHONY : rendererTwo.s
+
+# target to generate assembly for a file
+rendererTwo.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererTwo.cpp.s
+.PHONY : rendererTwo.cpp.s
+
+rendererZero.o: rendererZero.cpp.o
+
+.PHONY : rendererZero.o
+
+# target to build an object file
+rendererZero.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererZero.cpp.o
+.PHONY : rendererZero.cpp.o
+
+rendererZero.i: rendererZero.cpp.i
+
+.PHONY : rendererZero.i
+
+# target to preprocess a source file
+rendererZero.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererZero.cpp.i
+.PHONY : rendererZero.cpp.i
+
+rendererZero.s: rendererZero.cpp.s
+
+.PHONY : rendererZero.s
+
+# target to generate assembly for a file
+rendererZero.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/rendererZero.cpp.s
+.PHONY : rendererZero.cpp.s
 
 snake.o: snake.cpp.o
 
@@ -276,9 +357,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... renderer.o"
-	@echo "... renderer.i"
-	@echo "... renderer.s"
+	@echo "... rendererBase.o"
+	@echo "... rendererBase.i"
+	@echo "... rendererBase.s"
+	@echo "... rendererOne.o"
+	@echo "... rendererOne.i"
+	@echo "... rendererOne.s"
+	@echo "... rendererTwo.o"
+	@echo "... rendererTwo.i"
+	@echo "... rendererTwo.s"
+	@echo "... rendererZero.o"
+	@echo "... rendererZero.i"
+	@echo "... rendererZero.s"
 	@echo "... snake.o"
 	@echo "... snake.i"
 	@echo "... snake.s"
