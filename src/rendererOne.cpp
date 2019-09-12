@@ -16,7 +16,7 @@ void RendererOne::Render(Snake const snake, SDL_Point const &food) {
     // Render Obstacle Up
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
     SDL_RenderFillRect(sdl_renderer, &obstacleUp);
-
+    
     // Render Obstacle Mid
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderFillRect(sdl_renderer, &obstacleMid);
@@ -51,5 +51,5 @@ void RendererOne::Render(Snake const snake, SDL_Point const &food) {
 
     SDL_UpdateWindowSurface( sdl_window );
     SDL_RenderPresent(sdl_renderer);
-   
+  
 }

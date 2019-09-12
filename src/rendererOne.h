@@ -28,6 +28,7 @@ class RendererOne : public RendererBase {
                         obstacleDown.h = 25;
                         obstacleDown.x = 320;
                         obstacleDown.y = 590;
+          
                    }
 
   void Render(Snake const snake, SDL_Point const &food);

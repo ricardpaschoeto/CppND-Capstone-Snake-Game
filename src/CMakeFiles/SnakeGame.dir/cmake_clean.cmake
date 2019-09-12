@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o"
   "CMakeFiles/SnakeGame.dir/rendererZero.cpp.o"
   "CMakeFiles/SnakeGame.dir/snake.cpp.o"
+  "CMakeFiles/SnakeGame.dir/sound.cpp.o"
   "SnakeGame"
   "SnakeGame.pdb"
 )

@@ -8,6 +8,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       random_w(0, static_cast<int>(grid_width)),
       random_h(0, static_cast<int>(grid_height)) {
   PlaceFood();
+
 }
 
 void Game::Run(Controller const &controller, RendererBase &renderer,
@@ -26,6 +27,10 @@ void Game::Run(Controller const &controller, RendererBase &renderer,
     controller.HandleInput(running, snake);
     Update();
     renderer.Render(snake, food);
+
+    if(renderer.collision(snake)){
+      snake.alive = false;
+    }
 
     frame_end = SDL_GetTicks();
 

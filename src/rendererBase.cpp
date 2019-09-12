@@ -46,16 +46,23 @@ void RendererBase::UpdateWindowTitle(int score, int fps) {
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
 
-void RendererBase::drawHead(Snake const snake){
+bool RendererBase::collision(Snake snake){
+  int factor = screen_width/grid_width;
+  if((factor*static_cast<int>(snake.head_x) >= obstacleUp.x && factor*static_cast<int>(snake.head_x) <= (obstacleUp.x + obstacleUp.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleUp.y && factor*static_cast<int>(snake.head_y) <= (obstacleUp.y + obstacleUp.h))){
+      return true;
+    }
 
-  int line1_x1 = 320;  int line1_x2 = 300;  int line1_y1 = 300; int line1_y2 = 340;
-  int line2_x1 = 320;  int line2_x2 = 340;  int line2_y1 = 300; int line2_y2 = 340;
-  int line3_x1 = 300;  int line3_x2 = 340;  int line3_y1 = 340; int line3_y2 = 340;
+  if((factor*static_cast<int>(snake.head_x) >= obstacleMid.x && factor*static_cast<int>(snake.head_x) <= (obstacleMid.x + obstacleMid.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleMid.y && factor*static_cast<int>(snake.head_y) <= (obstacleMid.y + obstacleMid.h))){
+      return true;
+    }
 
+    if((factor*static_cast<int>(snake.head_x) >= obstacleDown.x && factor*static_cast<int>(snake.head_x) <= (obstacleDown.x + obstacleDown.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleDown.y && factor*static_cast<int>(snake.head_y) <= (obstacleDown.y + obstacleDown.h))){
+      return true;
+    }
+  
+  return false;
 
-  SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
-
-  SDL_RenderDrawLine(sdl_renderer, line1_x1, line1_y1, line1_x2, line1_y2);
-  SDL_RenderDrawLine(sdl_renderer, line2_x1, line2_y1, line2_x2, line2_y2);
-  SDL_RenderDrawLine(sdl_renderer, line3_x1, line3_y1, line3_x2, line3_y2);
 }
