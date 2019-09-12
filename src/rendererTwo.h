@@ -2,7 +2,7 @@
 #define RENDERER_TWO_H
 
 #include <vector>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "snake.h"
 #include "rendererBase.h"
 

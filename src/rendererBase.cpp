@@ -33,9 +33,17 @@ RendererBase::RendererBase(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
+  // Texture
+  img = IMG_Load("../build/desert.bmp");
+  texture = SDL_CreateTextureFromSurface(sdl_renderer, img);
+  screen.x = 0;
+  screen.y = 100;
+  screen.w = 100;
+  screen.h = 100;
 }
 
 RendererBase::~RendererBase() {
+  SDL_FreeSurface(img);
   SDL_DestroyRenderer(sdl_renderer);
   SDL_DestroyWindow(sdl_window);
   SDL_Quit();
@@ -63,6 +71,26 @@ bool RendererBase::collision(Snake snake){
       return true;
     }
   
+  return false;
+
+}
+
+bool RendererBase::ObstacleCell(int x, int y){
+  if((x >= obstacleUp.x && x <= (obstacleUp.x + obstacleUp.w)) &&
+     (y >= obstacleUp.y && y <= (obstacleUp.y + obstacleUp.h))){
+       return true;
+     }
+
+  if((x >= obstacleMid.x && x <= (obstacleMid.x + obstacleMid.w)) &&
+     (y >= obstacleMid.y && y <= (obstacleMid.y + obstacleMid.h))){
+       return true;
+     }
+
+  if((x >= obstacleDown.x && x <= (obstacleDown.x + obstacleDown.w)) &&
+     (y >= obstacleDown.y && y <= (obstacleDown.y + obstacleDown.h))){
+       return true;
+     }
+
   return false;
 
 }

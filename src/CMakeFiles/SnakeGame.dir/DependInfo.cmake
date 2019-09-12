@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererTwo.cpp" "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o"
   "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererZero.cpp" "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/CMakeFiles/SnakeGame.dir/rendererZero.cpp.o"
   "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.cpp" "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/CMakeFiles/SnakeGame.dir/snake.cpp.o"
-  "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/sound.cpp" "/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/CMakeFiles/SnakeGame.dir/sound.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

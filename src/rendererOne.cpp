@@ -27,6 +27,8 @@ void RendererOne::Render(Snake const snake, SDL_Point const &food) {
 
     // Render food    
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
+    block.x = food.x * block.w;
+    block.y = food.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
 
     // Render snake's body
@@ -50,6 +52,7 @@ void RendererOne::Render(Snake const snake, SDL_Point const &food) {
     SDL_RenderFillRect(sdl_renderer, &block);
 
     SDL_UpdateWindowSurface( sdl_window );
+    
     SDL_RenderPresent(sdl_renderer);
   
 }

@@ -2,14 +2,15 @@
 #define GAME_H
 
 #include <random>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "controller.h"
 #include "rendererBase.h"
+#include "sound.h"
 #include "snake.h"
 
 class Game {
  public:
-  Game(std::size_t grid_width, std::size_t grid_height);
+  Game(std::size_t grid_width, std::size_t grid_height, RendererBase &renderer);
   void Run(Controller const &controller, RendererBase &renderer,
            std::size_t target_frame_duration);
   int GetScore() const;
@@ -17,6 +18,7 @@ class Game {
 
  private:
   Snake snake;
+  Sound sound;
   SDL_Point food;
 
   std::random_device dev;
@@ -26,8 +28,8 @@ class Game {
 
   int score{0};
 
-  void PlaceFood();
-  void Update();
+  void PlaceFood(RendererBase &);
+  void Update(RendererBase &);
 };
 
 #endif

@@ -339,33 +339,6 @@ snake.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/snake.cpp.s
 .PHONY : snake.cpp.s
 
-sound.o: sound.cpp.o
-
-.PHONY : sound.o
-
-# target to build an object file
-sound.cpp.o:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/sound.cpp.o
-.PHONY : sound.cpp.o
-
-sound.i: sound.cpp.i
-
-.PHONY : sound.i
-
-# target to preprocess a source file
-sound.cpp.i:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/sound.cpp.i
-.PHONY : sound.cpp.i
-
-sound.s: sound.cpp.s
-
-.PHONY : sound.s
-
-# target to generate assembly for a file
-sound.cpp.s:
-	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/sound.cpp.s
-.PHONY : sound.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -399,9 +372,6 @@ help:
 	@echo "... snake.o"
 	@echo "... snake.i"
 	@echo "... snake.s"
-	@echo "... sound.o"
-	@echo "... sound.i"
-	@echo "... sound.s"
 .PHONY : help
 
 

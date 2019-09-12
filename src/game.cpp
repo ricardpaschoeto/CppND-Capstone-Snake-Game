@@ -1,13 +1,13 @@
 #include "game.h"
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height)
+Game::Game(std::size_t grid_width, std::size_t grid_height, RendererBase &renderer)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width)),
       random_h(0, static_cast<int>(grid_height)) {
-  PlaceFood();
+  PlaceFood(renderer);
 
 }
 
@@ -20,12 +20,14 @@ void Game::Run(Controller const &controller, RendererBase &renderer,
   int frame_count = 0;
   bool running = true;
 
+  Mix_PlayMusic(sound.gMusic, -1);
+
   while (running) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
-    Update();
+    Update(renderer);
     renderer.Render(snake, food);
 
     if(renderer.collision(snake)){
@@ -55,16 +57,18 @@ void Game::Run(Controller const &controller, RendererBase &renderer,
 
   }
 
+  Mix_HaltMusic();
+
 }
 
-void Game::PlaceFood() {
+void Game::PlaceFood(RendererBase &renderer) {
   int x, y;
   while (true) {
     x = random_w(engine);
     y = random_h(engine);
     // Check that the location is not occupied by a snake item before placing
     // food.
-    if (!snake.SnakeCell(x, y)) {
+    if (!snake.SnakeCell(x, y) && !renderer.ObstacleCell(x,y)) {
       food.x = x;
       food.y = y;
       return;
@@ -72,7 +76,7 @@ void Game::PlaceFood() {
   }
 }
 
-void Game::Update() {
+void Game::Update(RendererBase &renderer) {
   if (!snake.alive) return;
 
   snake.Update();
@@ -83,7 +87,7 @@ void Game::Update() {
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
     score++;
-    PlaceFood();
+    PlaceFood(renderer);
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.02;
