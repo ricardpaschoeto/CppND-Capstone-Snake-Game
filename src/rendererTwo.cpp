@@ -100,3 +100,26 @@ void RendererTwo::UpdateDown(){
         directionFlagDown = 100;
     }    
 }
+
+bool RendererTwo::collision(Snake snake){
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleUp.x && factor*static_cast<int>(snake.head_x) <= (obstacleUp.x + obstacleUp.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleUp.y && factor*static_cast<int>(snake.head_y) <= (obstacleUp.y + obstacleUp.h))){
+        return true;
+    }
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleMid.x && factor*static_cast<int>(snake.head_x) <= (obstacleMid.x + obstacleMid.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleMid.y && factor*static_cast<int>(snake.head_y) <= (obstacleMid.y + obstacleMid.h))){
+        return true;
+    }
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleDown.x && factor*static_cast<int>(snake.head_x) <= (obstacleDown.x + obstacleDown.w)) &&
+      (factor*static_cast<int>(snake.head_y) >= obstacleDown.y && factor*static_cast<int>(snake.head_y) <= (obstacleDown.y + obstacleDown.h))){
+        return true;
+    }
+  
+  return false;
+
+}
+
+bool RendererTwo::ObstacleCell(int x, int y){return false;} 

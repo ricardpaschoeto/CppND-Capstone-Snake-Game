@@ -5,7 +5,6 @@
 #include "SDL2/SDL.h"
 #include "controller.h"
 #include "rendererBase.h"
-//#include "sound.h"
 #include "snake.h"
 
 class Game {
@@ -18,7 +17,6 @@ class Game {
 
  private:
   Snake snake;
-  //Sound sound;
   SDL_Point food;
 
   std::random_device dev;

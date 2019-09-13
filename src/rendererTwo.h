@@ -34,8 +34,9 @@ class RendererTwo : public RendererBase {
                         directionFlagDown = 400;
                    }
 
-  void Render(Snake const snake, SDL_Point const &food);
-
+     void Render(Snake const snake, SDL_Point const &food);
+     bool collision(Snake);
+     bool ObstacleCell(int, int);
   private:
     void UpdateUp();
     void UpdateMid();

@@ -15,7 +15,9 @@ class RendererZero : public RendererBase {
                    RendererBase(screen_width, screen_height, grid_width, grid_height){}
 
   void Render(Snake const snake, SDL_Point const &food);
-
+  bool collision(Snake);
+  bool ObstacleCell(int, int);
+  
 };
 
 #endif

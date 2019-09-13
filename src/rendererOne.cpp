@@ -56,3 +56,45 @@ void RendererOne::Render(Snake const snake, SDL_Point const &food) {
     SDL_RenderPresent(sdl_renderer);
   
 }
+
+bool RendererOne::collision(Snake snake){
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleUp.x && factor*static_cast<int>(snake.head_x) <= (obstacleUp.x + obstacleUp.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleUp.y && factor*static_cast<int>(snake.head_y) <= (obstacleUp.y + obstacleUp.h))){
+        return true;
+    }
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleMid.x && factor*static_cast<int>(snake.head_x) <= (obstacleMid.x + obstacleMid.w)) &&
+     (factor*static_cast<int>(snake.head_y) >= obstacleMid.y && factor*static_cast<int>(snake.head_y) <= (obstacleMid.y + obstacleMid.h))){
+        return true;
+    }
+
+  if((factor*static_cast<int>(snake.head_x) >= obstacleDown.x && factor*static_cast<int>(snake.head_x) <= (obstacleDown.x + obstacleDown.w)) &&
+      (factor*static_cast<int>(snake.head_y) >= obstacleDown.y && factor*static_cast<int>(snake.head_y) <= (obstacleDown.y + obstacleDown.h))){
+        return true;
+    }
+  
+  return false;
+
+}
+
+bool RendererOne::ObstacleCell(int x, int y){
+  std::cout << factor << std::endl;
+  if((factor*x >= obstacleUp.x && factor*x <= (obstacleUp.x + obstacleUp.w)) &&
+     (factor*y >= obstacleUp.y && factor*y <= (obstacleUp.y + obstacleUp.h))){
+       return true;
+     }
+
+  if((factor*x >= obstacleMid.x && factor*x <= (obstacleMid.x + obstacleMid.w)) &&
+     (factor*y >= obstacleMid.y && factor*y <= (obstacleMid.y + obstacleMid.h))){
+       return true;
+     }
+
+  if((factor*x >= obstacleDown.x && factor*x <= (obstacleDown.x + obstacleDown.w)) &&
+     (factor*y >= obstacleDown.y && factor*y <= (obstacleDown.y + obstacleDown.h))){
+       return true;
+     }
+
+  return false;
+
+}

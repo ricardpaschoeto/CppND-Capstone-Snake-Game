@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.cpp
-rendererBase.h
-/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
-iostream
--
-string
--
-
 /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
 vector
 -
 SDL2/SDL.h
 /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/SDL2/SDL.h
-SDL2/SDL_image.h
-/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/SDL2/SDL_image.h
 snake.h
 /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.h
+
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.cpp
+rendererOne.h
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.h
+iostream
+-
+string
+-
+
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.h
+vector
+-
+SDL2/SDL.h
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/SDL2/SDL.h
+snake.h
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.h
+rendererBase.h
+/home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
 
 /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.h
 vector

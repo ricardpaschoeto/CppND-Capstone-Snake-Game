@@ -44,5 +44,7 @@ void RendererZero::Render(Snake const snake, SDL_Point const &food) {
    
 }
 
+bool RendererZero::collision(Snake snake){return false;}
+bool RendererZero::ObstacleCell(int x, int y){return false;}
 
 

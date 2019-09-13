@@ -7,9 +7,10 @@
 #include "rendererBase.h"
 
 class RendererOne : public RendererBase {
+ 
  public:
 
-  RendererOne(const std::size_t screen_width,
+     RendererOne(const std::size_t screen_width,
                    const std::size_t screen_height,
                    const std::size_t grid_width, const std::size_t grid_height):
                    RendererBase(screen_width, screen_height, grid_width, grid_height){
@@ -31,8 +32,11 @@ class RendererOne : public RendererBase {
           
                    }
 
-  void Render(Snake const snake, SDL_Point const &food);
+public:
 
+     void Render(Snake const snake, SDL_Point const &food);
+     bool collision(Snake);
+     bool ObstacleCell(int, int);
 };
 
 #endif
