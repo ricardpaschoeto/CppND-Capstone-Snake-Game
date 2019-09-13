@@ -20,8 +20,6 @@ void Game::Run(Controller const &controller, RendererBase &renderer,
   int frame_count = 0;
   bool running = true;
 
-  Mix_PlayMusic(sound.gMusic, -1);
-
   while (running) {
     frame_start = SDL_GetTicks();
 
@@ -57,12 +55,11 @@ void Game::Run(Controller const &controller, RendererBase &renderer,
 
   }
 
-  Mix_HaltMusic();
-
 }
 
 void Game::PlaceFood(RendererBase &renderer) {
   int x, y;
+  
   while (true) {
     x = random_w(engine);
     y = random_h(engine);

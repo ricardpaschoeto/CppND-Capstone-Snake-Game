@@ -22,19 +22,17 @@ class RendererBase {
   SDL_Rect obstacleMid;
   SDL_Rect obstacleDown;
 
-  SDL_Rect screen;
-  SDL_Renderer* sdl_renderer;
-  SDL_Texture* texture = nullptr;
-
  protected:
   SDL_Window* sdl_window;
-  SDL_Surface* img;
+  SDL_Renderer* sdl_renderer;
+  Snake snake;
 
-
+  int factor = screen_width/grid_width;
   const std::size_t screen_width;
   const std::size_t screen_height;
   const std::size_t grid_width;
   const std::size_t grid_height;
+
 };
 
 #endif
