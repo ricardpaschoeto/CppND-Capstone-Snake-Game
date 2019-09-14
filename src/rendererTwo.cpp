@@ -5,10 +5,6 @@
 
 void RendererTwo::Render(Snake const snake, SDL_Point const &food) {
 
-    SDL_Rect block;
-    block.w = screen_width / grid_width;
-    block.h = screen_height / grid_height;
-
     // Clear screen
     SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
     SDL_RenderClear(sdl_renderer);
@@ -29,30 +25,13 @@ void RendererTwo::Render(Snake const snake, SDL_Point const &food) {
     SDL_RenderFillRect(sdl_renderer, &obstacleDown);
 
     // Render food    
-    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-    block.x = food.x * block.w;
-    block.y = food.y * block.h;
-    SDL_RenderFillRect(sdl_renderer, &block);
+    RenderFood(food);
 
     // Render snake's body
-    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-    for (SDL_Point const &point : snake.body) {
-      block.x = point.x * block.w;
-      block.y = point.y * block.h;
-      SDL_RenderFillRect(sdl_renderer, &block);
-    }
+    RenderBody(snake);
 
     // Render snake's head
-    //drawHead(snake);
-    block.x = static_cast<int>(snake.head_x) * block.w;
-    block.y = static_cast<int>(snake.head_y) * block.h;
-    if (snake.alive) {
-      SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
-    }else {
-      SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-    }
-    
-    SDL_RenderFillRect(sdl_renderer, &block);
+    RenderHead(snake);
 
     SDL_UpdateWindowSurface( sdl_window );
     SDL_RenderPresent(sdl_renderer);
@@ -103,18 +82,18 @@ void RendererTwo::UpdateDown(){
 
 bool RendererTwo::collision(Snake snake){
 
-  if((factor*static_cast<int>(snake.head_x) >= obstacleUp.x && factor*static_cast<int>(snake.head_x) <= (obstacleUp.x + obstacleUp.w)) &&
-     (factor*static_cast<int>(snake.head_y) >= obstacleUp.y && factor*static_cast<int>(snake.head_y) <= (obstacleUp.y + obstacleUp.h))){
+  if((block.w*static_cast<int>(snake.head_x) >= obstacleUp.x && block.w*static_cast<int>(snake.head_x) <= (obstacleUp.x + obstacleUp.w)) &&
+     (block.h*static_cast<int>(snake.head_y) >= obstacleUp.y && block.h*static_cast<int>(snake.head_y) <= (obstacleUp.y + obstacleUp.h))){
         return true;
     }
 
-  if((factor*static_cast<int>(snake.head_x) >= obstacleMid.x && factor*static_cast<int>(snake.head_x) <= (obstacleMid.x + obstacleMid.w)) &&
-     (factor*static_cast<int>(snake.head_y) >= obstacleMid.y && factor*static_cast<int>(snake.head_y) <= (obstacleMid.y + obstacleMid.h))){
+  if((block.w*static_cast<int>(snake.head_x) >= obstacleMid.x && block.w*static_cast<int>(snake.head_x) <= (obstacleMid.x + obstacleMid.w)) &&
+     (block.h*static_cast<int>(snake.head_y) >= obstacleMid.y && block.h*static_cast<int>(snake.head_y) <= (obstacleMid.y + obstacleMid.h))){
         return true;
     }
 
-  if((factor*static_cast<int>(snake.head_x) >= obstacleDown.x && factor*static_cast<int>(snake.head_x) <= (obstacleDown.x + obstacleDown.w)) &&
-      (factor*static_cast<int>(snake.head_y) >= obstacleDown.y && factor*static_cast<int>(snake.head_y) <= (obstacleDown.y + obstacleDown.h))){
+  if((block.w*static_cast<int>(snake.head_x) >= obstacleDown.x && block.w*static_cast<int>(snake.head_x) <= (obstacleDown.x + obstacleDown.w)) &&
+     (block.h*static_cast<int>(snake.head_y) >= obstacleDown.y && block.h*static_cast<int>(snake.head_y) <= (obstacleDown.y + obstacleDown.h))){
         return true;
     }
   

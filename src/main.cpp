@@ -33,15 +33,15 @@ int main() {
   if (level == 0){
     RendererZero renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
     game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, renderer, kMsPerFrame);
+    game->Run(controller, kMsPerFrame);
   }else if (level == 1){
     RendererOne renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
     game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, renderer, kMsPerFrame);
+    game->Run(controller, kMsPerFrame);
   }else if (level == 2){
     RendererTwo renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
     game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, renderer, kMsPerFrame);
+    game->Run(controller, kMsPerFrame);
   }else{
     std::cout << "Choose an valid Input!" << std::endl;
   }

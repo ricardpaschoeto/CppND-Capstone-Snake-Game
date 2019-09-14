@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "SDL2/SDL.h"
+#include "SDL2/SDL2_gfxPrimitives.h"
 #include "snake.h"
 
 class RendererBase {
@@ -20,8 +21,13 @@ class RendererBase {
   SDL_Rect obstacleUp;
   SDL_Rect obstacleMid;
   SDL_Rect obstacleDown;
+  SDL_Rect block;
 
  protected:
+
+  void RenderHead(Snake const);
+  void RenderBody(Snake const);
+  void RenderFood(SDL_Point const &);
  
   SDL_Window* sdl_window;
   SDL_Renderer* sdl_renderer;

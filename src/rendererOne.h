@@ -4,16 +4,16 @@
 #include <vector>
 #include "SDL2/SDL.h"
 #include "snake.h"
-#include "rendererBase.h"
+#include "rendererZero.h"
 
-class RendererOne : public RendererBase {
+class RendererOne : public RendererZero {
  
  public:
 
      RendererOne(const std::size_t screen_width,
                    const std::size_t screen_height,
                    const std::size_t grid_width, const std::size_t grid_height):
-                   RendererBase(screen_width, screen_height, grid_width, grid_height){
+                   RendererZero(screen_width, screen_height, grid_width, grid_height){
 
                         obstacleUp.w = 80;
                         obstacleUp.h = 25;
@@ -31,8 +31,6 @@ class RendererOne : public RendererBase {
                         obstacleDown.y = 590;
           
                    }
-
-public:
 
      void Render(Snake const snake, SDL_Point const &food);
      bool collision(Snake);

@@ -10,14 +10,14 @@
 class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height, RendererBase &renderer);
-  void Run(Controller const &controller, RendererBase &renderer,
-           std::size_t target_frame_duration);
+  void Run(Controller const &controller, std::size_t target_frame_duration);
   int GetScore() const;
   int GetSize() const;
 
  private:
   Snake snake;
   SDL_Point food;
+  RendererBase &renderer;
 
   std::random_device dev;
   std::mt19937 engine;
@@ -26,8 +26,8 @@ class Game {
 
   int score{0};
 
-  void PlaceFood(RendererBase &);
-  void Update(RendererBase &);
+  void PlaceFood();
+  void Update();
 };
 
 #endif
