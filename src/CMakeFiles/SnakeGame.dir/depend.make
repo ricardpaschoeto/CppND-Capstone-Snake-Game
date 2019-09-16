@@ -27,11 +27,14 @@ CMakeFiles/SnakeGame.dir/rendererBase.cpp.o: snake.h
 CMakeFiles/SnakeGame.dir/rendererOne.cpp.o: rendererBase.h
 CMakeFiles/SnakeGame.dir/rendererOne.cpp.o: rendererOne.cpp
 CMakeFiles/SnakeGame.dir/rendererOne.cpp.o: rendererOne.h
+CMakeFiles/SnakeGame.dir/rendererOne.cpp.o: rendererZero.h
 CMakeFiles/SnakeGame.dir/rendererOne.cpp.o: snake.h
 
 CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: rendererBase.h
+CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: rendererOne.h
 CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: rendererTwo.cpp
 CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: rendererTwo.h
+CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: rendererZero.h
 CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o: snake.h
 
 CMakeFiles/SnakeGame.dir/rendererZero.cpp.o: rendererBase.h

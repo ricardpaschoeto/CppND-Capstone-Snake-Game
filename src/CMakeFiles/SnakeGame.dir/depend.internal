@@ -28,11 +28,14 @@ CMakeFiles/SnakeGame.dir/rendererOne.cpp.o
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.cpp
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.h
+ /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererZero.h
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.h
 CMakeFiles/SnakeGame.dir/rendererTwo.cpp.o
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
+ /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererOne.h
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererTwo.cpp
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererTwo.h
+ /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererZero.h
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/snake.h
 CMakeFiles/SnakeGame.dir/rendererZero.cpp.o
  /home/paschoeto/workspace/capstone/CppND-Capstone-Snake-Game/src/rendererBase.h
