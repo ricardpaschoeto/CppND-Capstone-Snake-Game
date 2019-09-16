@@ -2,7 +2,7 @@
 
 This is the Snake Game project with extension level of dificulty.
 
-<img src="Screenshoot.png"/>
+<img src="Screenshot.png"/>
 
 The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
 
