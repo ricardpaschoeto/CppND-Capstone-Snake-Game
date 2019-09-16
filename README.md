@@ -30,4 +30,4 @@ The number of levels of difficulty added was 3 and I used concepts of OOP like p
 
 ## Class Structure
 
-<img src="UML.vpd.png">
+<img src="UML.vpd.png"/>
