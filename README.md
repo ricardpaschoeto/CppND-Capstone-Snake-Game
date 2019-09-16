@@ -67,3 +67,7 @@ New classes were created, each class to correspond to each level.
 - Derived class functions override virtual base class functions
 
   Virtual classes implemented in rendererZer0, rendererOne, rendererTwo classes
+  
+- The project makes use of references in function declarations
+
+  In classes rendererZero, rendererOne, rendererTwo in render function parameters
