@@ -31,3 +31,39 @@ The number of levels of difficulty added was 3 and I used concepts of OOP like p
 ## Class Structure
 
 <img src="UML.vpd.png"/>
+
+New classes were created, each class to correspond to each level.
+
+## Rubric Point
+
+- The project demonstrates an understanding of C++ functions and control structures
+ 
+   In main.cpp, rendererZero.cpp, rendererOne.cpp, rendererTwo.cpp has a IF's to manager collision e.g;
+   
+- The project accepts user input and processes the input.
+
+   In main.cpp, user input to choose the game level;
+   
+- The project uses Object Oriented Programming techniques
+
+   Add new classes rendererBase.cpp, rendererZero.cpp, rendererOne.cpp, rendererTwo.cpp.
+   
+- Classes use appropriate access specifiers for class members
+
+  In files *.h, rendererBase, rendererZero, rendererOne, rendererTwo
+  
+- Class constructors utilize member initialization lists
+
+  Construtors in classes call constructors and Base class constructors to initialize variables and objects
+  
+- Classes abstract implementation details from their interfaces
+
+  Heritance with virtual method in rendererBase class
+  
+- Classes follow an appropriate inheritance hierarchy
+
+  Heritance from Class rendererBase with virtual method implemented in child classes
+  
+- Derived class functions override virtual base class functions
+
+  Virtual classes implemented in rendererZer0, rendererOne, rendererTwo classes
