@@ -31,3 +31,16 @@ The number of levels of difficulty added was 3 and I used concepts of OOP like p
 ## Class Structure
 
 <img src="UML.vpd.png"/>
+
+New classes were created, each class to correspond to each level.
+
+## Rubric Point
+
+- The project demonstrates an understanding of C++ functions and control structures
+ 
+   In main.cpp, rendererZero.cpp, rendererOne.cpp, rendererTwo.cpp has a IF's to manager collision e.g;
+   
+- The project accepts user input and processes the input.
+
+   In main.cpp, user input to choose the game level;
+
