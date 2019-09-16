@@ -50,7 +50,7 @@ New classes were created, each class to correspond to each level.
    
 - Classes use appropriate access specifiers for class members
 
-  In files *.h, rendererBase, rendererZer0, rendererOne, rendererTwo
+  In files *.h, rendererBase, rendererZero, rendererOne, rendererTwo
   
 - Class constructors utilize member initialization lists
 
