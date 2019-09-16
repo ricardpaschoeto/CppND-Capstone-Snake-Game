@@ -2,11 +2,9 @@
 
 This is the Snake Game project with extension level of dificulty.
 
-<img src="snake_game.gif"/>
+<img src="Screenshot.png"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
-
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+The number of levels of difficulty added was 3 and I used concepts of OOP like polymorphism and inheritance e.g.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -29,3 +27,7 @@ In this project, you can build your own C++ application or extend this Snake gam
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
+
+## Class Structure
+
+<img src="UML.vpd.png"/>
