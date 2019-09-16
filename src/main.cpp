@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "controller.h"
 #include "game.h"
+#include "rendererBase.h"
 #include "rendererZero.h"
 #include "rendererOne.h"
 #include "rendererTwo.h"
@@ -28,29 +29,28 @@ int main() {
   std::cin >> level;
 
   Controller controller;
+  RendererBase *renderer;
   Game *game;
 
   if (level == 0){
-    RendererZero renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-    game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, kMsPerFrame);
+    renderer = new RendererZero(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   }else if (level == 1){
-    RendererOne renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-    game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, kMsPerFrame);
+    renderer = new RendererOne(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   }else if (level == 2){
-    RendererTwo renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-    game = new Game(kGridWidth, kGridHeight, renderer);
-    game->Run(controller, kMsPerFrame);
+    renderer = new  RendererTwo(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   }else{
     std::cout << "Choose an valid Input!" << std::endl;
   }
+
+  game = new Game(kGridWidth, kGridHeight, *renderer);
+  game->Run(controller, kMsPerFrame);
 
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game->GetScore() << "\n";
   std::cout << "Size: " << game->GetSize() << "\n";
 
+  delete renderer;
   delete game;
-  
+    
   return 0;
 }
